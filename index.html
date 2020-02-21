@@ -3,7 +3,7 @@
       <script>
          document.addEventListener('DOMContentLoaded', function(){
              function wordCounter(string){
-                var matches = string.matchAll(/[\w']+/g),
+                var matches = string.matchAll(/[\w']+/g), // Match alphanumerics & apostrophe
                     dictionary = {},
                     match = matches.next();
                 while(!match.done){
@@ -24,7 +24,12 @@
                  output = document.getElementById('output');
 
              textArea.addEventListener('input', function(){
-                output.innerText = JSON.stringify(wordCounter(textArea.value), null, 2);
+                var words = wordCounter(textArea.value),
+                    outputText = ''
+                Object.entries(words).forEach(function(entry){
+                    outputText += entry[0] + ' = ' + entry[1] + '\n';
+                });
+                output.innerText = outputText;
              });
 
          });

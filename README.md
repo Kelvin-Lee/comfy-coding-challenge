@@ -1,13 +1,7 @@
 # comfy-coding-challenge
 Comfy's coding challenge/take home project.
 
-2020-02-20th: Wrote a function that takes a _String_ as input, and returns a map/dictionary of the words + their number of occurences in the string, ignoring upper or lowercase.
-
-2020-02-20th 16:18: Have some questions about input/output:
-- Does my solution need to be able to read a _file_, or just read a string?
-- How should the HTML file look like (does the output need to be displayed inside `<div>`s, for example)?
-- Are there other bodies of text I can verify my output against?
-- If I'm building this as a Node.js script, am I allowed to leverage built in Node.js modules (e.g. `fs`)?
+2020-02-20th 22:05: Organizing code into a HTML file.
 
 <details><summary>Challenge description</summary>
 

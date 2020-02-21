@@ -1,0 +1,43 @@
+<html>
+   <head>
+      <script>
+         document.addEventListener('DOMContentLoaded', function(){
+             function wordCounter(string){
+                var words = string.split(/[\s,\.-]/), // TODO: Replace with more generic regex?
+                    dictionary = {};
+                words.forEach(function(word){
+                   let entry = word.toLowerCase();
+                   if (word.length > 0){ // Guard against empty-string
+                      if (dictionary[entry]){
+                         dictionary[entry] += 1;
+                      } else {
+                         dictionary[entry] = 1;
+                      }
+                   }
+                });
+                return dictionary;
+             }
+
+             var textArea = document.getElementById('input'),
+                 output = document.getElementById('output');
+
+             textArea.addEventListener('input', function(){
+                output.innerText = JSON.stringify(wordCounter(textArea.value), null, 2);
+             });
+
+         });
+    
+      </script>
+   </head>
+   <body>
+      <div>
+          <p>Enter your text here:</p>
+          <textarea id="input" placeholder="Here"></textarea>
+      </div>
+      <div>
+          <p>Output of counts:</p>
+          <div id="output"></div>
+      </div>
+   </body>
+
+</html>

@@ -1,12 +1,14 @@
 function wordCounter(string){
-   var words = string.split(' '),
+   var words = string.split(/[\s,\.]/),
        dictionary = {};
    words.forEach(function(word){
       let entry = word.toLowerCase();
-      if (dictionary[entry]){
-         dictionary[entry] += 1;
-      } else {
-         dictionary[entry] = 1;
+      if (word.length > 0){
+         if (dictionary[entry]){
+            dictionary[entry] += 1;
+         } else {
+            dictionary[entry] = 1;
+         }
       }
    });
    return dictionary;

@@ -1,6 +1,8 @@
 # comfy-coding-challenge
 Comfy's coding challenge/take home project.
 
+2020-02-20th: Wrote a function that takes a _String_ as input, and returns a map/dictionary of the words + their number of occurences in the string, ignoring upper or lowercase.
+
 <details><summary>Challenge description</summary>
 
 Using Javascrit print a list of all the words used in a sample of text. For each word you must also provide the number of times that word appears. Consider the following text from J.D. Salinger’s The Catcher in the Rye:

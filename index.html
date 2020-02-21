@@ -3,18 +3,20 @@
       <script>
          document.addEventListener('DOMContentLoaded', function(){
              function wordCounter(string){
-                var words = string.split(/[\s,\.-]/), // TODO: Replace with more generic regex?
-                    dictionary = {};
-                words.forEach(function(word){
-                   let entry = word.toLowerCase();
+                var matches = string.matchAll(/[\w']+/g),
+                    dictionary = {},
+                    match = matches.next();
+                while(!match.done){
+                   var word = match.value[0].toLowerCase();
                    if (word.length > 0){ // Guard against empty-string
-                      if (dictionary[entry]){
-                         dictionary[entry] += 1;
+                      if (dictionary[word]){
+                         dictionary[word] += 1;
                       } else {
-                         dictionary[entry] = 1;
+                         dictionary[word] = 1;
                       }
                    }
-                });
+                   match = matches.next();
+                }
                 return dictionary;
              }
 
@@ -26,8 +28,14 @@
              });
 
          });
-    
+
       </script>
+      <style>
+          textarea {
+              width: 500px;
+              height: 200px;
+          }
+      </style>
    </head>
    <body>
       <div>
